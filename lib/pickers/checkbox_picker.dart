@@ -49,7 +49,6 @@ class CheckboxPickerState<T> extends State<CheckboxPicker<T>> {
           itemBuilder: (BuildContext context, int index) {
             final item = widget.items[index];
             bool isSelected = selectedValues.contains(item);
-            print(item);
             return CheckboxListTile(
               activeColor: theme.colorScheme.secondary,
               checkColor: theme.dialogBackgroundColor,
