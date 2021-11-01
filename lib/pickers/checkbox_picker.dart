@@ -53,6 +53,7 @@ class CheckboxPickerState<T> extends State<CheckboxPicker<T>> {
               activeColor: theme.colorScheme.secondary,
               checkColor: theme.dialogBackgroundColor,
               title: Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
                 spacing: 15,
                 children: [
                 item.leading ?? Container(),

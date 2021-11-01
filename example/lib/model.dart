@@ -63,7 +63,7 @@ class ExampleModel {
 
   // Checkbox Picker Model
   static const List<PickerModel> iceCreamToppings = <PickerModel>[
-    PickerModel('Hot Fudge', code: 'FUDGE', leading: Icon(Icons.ac_unit)),
+    PickerModel('Hot Fudge', code: 'FUDGE', leading: Icon(Icons.ac_unit, size:40)),
     PickerModel('Sprinkles', code: 'SPRINK'),
     PickerModel('Caramel', code: 'CARM'),
     PickerModel('Oreos', code: 'OREO'),
