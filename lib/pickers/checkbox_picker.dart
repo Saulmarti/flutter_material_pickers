@@ -19,22 +19,22 @@ class CheckboxPicker<T> extends StatefulWidget {
   static const double defaultItemHeight = 40.0;
 
   // Variables
-  final List<T> items;
-  final List<T> selectedItems;
+  final List<PickerModel> items;
+  final List<PickerModel> selectedItems;
 
   // Callbacks
   final Transformer<T>? transformer;
 
   @override
   CheckboxPickerState createState() {
-    return CheckboxPickerState<T>(selectedItems);
+    return CheckboxPickerState<PickerModel>(selectedItems);
   }
 }
 
 class CheckboxPickerState<T> extends State<CheckboxPicker<T>> {
   CheckboxPickerState(this.selectedValues);
 
-  List<T> selectedValues;
+  List<PickerModel> selectedValues;
 
   @override
   Widget build(BuildContext context) {
@@ -49,16 +49,20 @@ class CheckboxPickerState<T> extends State<CheckboxPicker<T>> {
           itemBuilder: (BuildContext context, int index) {
             final item = widget.items[index];
             bool isSelected = selectedValues.contains(item);
-
+            print(item);
             return CheckboxListTile(
               activeColor: theme.colorScheme.secondary,
               checkColor: theme.dialogBackgroundColor,
-              title: Text(
-                widget.transformer?.call(item) ?? '$item',
+              title: Wrap(
+                spacing: 15,
+                children: [
+                item.leading ?? Container(),
+                Text(
+                item.name,
                 style: (isSelected)
                     ? TextStyle(color: theme.colorScheme.secondary)
                     : TextStyle(color: theme.textTheme.bodyText2?.color),
-              ),
+              )]),
               value: isSelected,
               onChanged: (bool? value) {
                 setState(() {

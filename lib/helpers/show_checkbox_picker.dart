@@ -10,8 +10,8 @@ import '../flutter_material_pickers.dart';
 Future<List<T>?> showMaterialCheckboxPicker<T>({
   required BuildContext context,
   String? title,
-  required List<T> items,
-  List<T>? selectedItems,
+  required List<PickerModel> items,
+  List<PickerModel>? selectedItems,
   Color? headerColor,
   Color? headerTextColor,
   Color? backgroundColor,

@@ -27,8 +27,8 @@ class CheckboxPickerDialog<T> extends StatefulWidget implements ICommonDialogPro
   });
 
   // Variables
-  final List<T> items;
-  final List<T>? selectedItems;
+  final List<PickerModel> items;
+  final List<PickerModel>? selectedItems;
   final Transformer<T>? transformer;
   @override
   final String? title;
@@ -54,12 +54,12 @@ class CheckboxPickerDialog<T> extends StatefulWidget implements ICommonDialogPro
 }
 
 class _CheckboxPickerDialogState<T> extends State<CheckboxPickerDialog<T>> {
-  _CheckboxPickerDialogState(List<T>? selectedItems) {
+  _CheckboxPickerDialogState(List<PickerModel>? selectedItems) {
     // make a shallow copy so we don't modify the original list
-    this.selectedItems = (selectedItems == null) ? List<T>.empty(growable: true) : List<T>.from(selectedItems);
+    this.selectedItems = (selectedItems == null) ? List<PickerModel>.empty(growable: true) : List<PickerModel>.from(selectedItems);
   }
 
-  late List<T> selectedItems;
+  late List<PickerModel> selectedItems;
 
   @override
   Widget build(BuildContext context) {
